@@ -14,7 +14,7 @@ jobs:
     steps:
       # Checkout the repository using the latest version
       - name: Checkout repository
-        uses: actions/checkout@v3  # Atualizando para a versão 3
+        uses: actions/checkout@v3
 
       # Custom Shell Script
       - name: Run custom shell script
@@ -24,7 +24,7 @@ jobs:
 
       # Setup Node.js environment using the latest version
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3  # Atualizando para a versão 3
+        uses: actions/setup-node@v3  # Certifique-se de usar a versão 3
         with:
           node-version: '20'
 
