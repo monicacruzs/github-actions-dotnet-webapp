@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
+      # Checkout the repository using the latest version
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3  # Atualizando para a versão 3
 
       # Custom Shell Script
       - name: Run custom shell script
@@ -22,9 +22,9 @@ jobs:
           echo "Olá! Este é um script personalizado em Shell."
           echo "A data e hora atuais são: $(date)"
 
-      # Setup Node.js environment using a pre-existing GitHub Action
+      # Setup Node.js environment using the latest version
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Atualizando para a versão 3
         with:
           node-version: '20'
 
