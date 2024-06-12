@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 * * * *'  # A cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Custom Shell Script
+      - name: Run custom shell script
+        run: |
+          echo "Olá! Este é um script personalizado em Shell."
+          echo "A data e hora atuais são: $(date)"
+
+      # Setup Node.js environment using a pre-existing GitHub Action
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      # Custom Node.js Script
+      - name: Run custom Node.js script
+        run: |
+          echo "console.log('Olá! Este é um script personalizado em Node.js.');" > meu_script_temp.js
+          echo "console.log('A data e hora atuais são:', new Date().toLocaleString());" >> meu_script_temp.js
+          node meu_script_temp.js
