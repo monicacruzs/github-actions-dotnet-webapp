@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 * * * *'  # A cada hora
+    - cron: '0 6 * * 3'  # Às 6 da manhã todas as quartas-feiras
 
 jobs:
   build:
